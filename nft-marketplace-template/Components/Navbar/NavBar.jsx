@@ -70,6 +70,7 @@ const NavBar = () => {
     } else {
       setOpenSideMenu(false);
     }
+    console.log(openSideMenu);
   };
 
   return (
@@ -118,7 +119,7 @@ const NavBar = () => {
 
           {/* Create Button Section */}
           <div className={Styles.navbar_container_right_button}>
-            <Button buttonText='Create' />
+            <Button btnName='Create' handleClick={()=>{}}/>
           </div>
 
           {/* User Profile */}
@@ -137,11 +138,10 @@ const NavBar = () => {
       </div>
 
       {/* SideBar Component (Mobile-only) */}
-      {
-        openSideMenu && (
-          <div className={Styles.SideBar}>
-            <SideBar setOpenSideMenu = {setOpenSideMenu} />
-          </div>
+      {openSideMenu && (
+        <div className={Styles.sidebar}>
+          <SideBar setOpenSideMenu = {setOpenSideMenu} />
+        </div>
       )}
     </div>
   )
