@@ -1,7 +1,7 @@
 import React from 'react'
 //INTERNAL IMPORT
 import Style from "../styles/index.module.css";
-import { HeroSection, Service, BigNFTSlider, Subscribe, Title } from "../Components/componentindex";
+import { HeroSection, Service, BigNFTSlider, Subscribe, Title, Category } from "../Components/componentindex";
 
 const Home = () => {
   return (
@@ -11,6 +11,7 @@ const Home = () => {
       <Service />
       <BigNFTSlider />
       <Title heading="Browse by Category" paragraph="Explore the best NFTs in our featured categories"/>
+      <Category />
       <Subscribe />
     </div>
   );
