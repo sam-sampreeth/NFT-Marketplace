@@ -14,6 +14,28 @@ const Collection = () => {
     const followingArray = [1, 2, 3, 4];
     const newsArray = [1, 2, 3, 4, 5, 6];
 
+    const openPopular = () =>{
+        if(!popular){
+            setPopular(true);
+            setFollowing(false);
+            setNews(false);
+        }
+    };
+    const openFollower = () =>{
+        if(!following){
+            setPopular(false);
+            setFollowing(true);
+            setNews(false);
+        }
+    };
+    const openNews = () =>{
+        if(!news){
+            setPopular(false);
+            setFollowing(false);
+            setNews(true);
+        }
+    };
+
 
   return (
     <div className={Styles.collection}>
@@ -35,15 +57,30 @@ const Collection = () => {
                 </div>
             </div>
         </div>
-        {
-            popular && (
-                <div className={Styles.collection_box}>
-                    {cardArray.map((el, i)=> (
-                        <DayComponent key={i+1} />
-                    ))}
-                </div>
-            )
-        }
+        {popular && (
+            <div className={Styles.collection_box}>
+                {cardArray.map((el, i)=> (
+                    <DayComponent key={i+1} />
+                ))}
+            </div>
+        )}
+
+        {following && (
+            <div className={Styles.collection_box}>
+                {followingArray.map((el, i)=> (
+                <DayComponent key={i+1} />
+            ))}
+            </div>
+        )}
+
+        {news && (
+            <div className={Styles.collection_box}>
+                {newsArray.map((el, i)=> (
+                <DayComponent key={i+1} />
+            ))}
+            </div>
+        )}
+
     </div>
   );
 };
